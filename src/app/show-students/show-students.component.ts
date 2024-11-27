@@ -7,8 +7,8 @@ import { StudentService } from '../services/student.service';
   styleUrls: ['./show-students.component.css'],
 })
 export class ShowStudentsComponent {
-  studentData: any = [];
-  displayedColumns: string[] = [
+  studentData:any=[];
+  displayedColumns:string[]=[
     'rollNo',
     'name',
     'age',
@@ -18,18 +18,18 @@ export class ShowStudentsComponent {
     'actions',
   ];
 
-  constructor(private studentService: StudentService) {
+  constructor(private studentService:StudentService) {
     this.loadStudents();
   }
 
   loadStudents() {
-    this.studentService.getStudents().subscribe((data: any) => {
-      this.studentData = data;
+    this.studentService.getStudents().subscribe((data:any)=> {
+      this.studentData=data;
     });
   }
 
-  deleteStudent(id: any) {
-    this.studentService.deleteStudent(id).subscribe(() => {
+  deleteStudent(id:any) {
+    this.studentService.deleteStudent(id).subscribe(()=> {
       this.loadStudents();// here we are doing reload after deletion
     });
   }

@@ -31,18 +31,18 @@ export class UpdateStudentComponent {
     this.loadStudentData(this.studentId);
   }
 
-  loadStudentData(id: string) {
+  loadStudentData(id:string) {
     this.studentService.getStudents().subscribe((students: any) => {
-      const student = students.find((s: any) => s.id === id);
+      const student=students.find((s:any)=> s.id === id);
       if (student) {
-        this.rollNo = student.rollNo;
+        this.rollNo=student.rollNo;
 
         this.updateStudentForm.patchValue({
-          name: student.name,
-          email: student.email,
-          age: student.age,
-          date: student.date,
-          isMale: student.isMale
+          name:student.name,
+          email:student.email,
+          age:student.age,
+          date:student.date,
+          isMale:student.isMale
         });
       }
     });
@@ -52,21 +52,21 @@ export class UpdateStudentComponent {
     if (this.updateStudentForm.invalid) {
       return;
     }
-
-    const updatedData = {
-      rollNo: this.rollNo,
-      name: this.updateStudentForm.value.name,
-      email: this.updateStudentForm.value.email,
-      age: this.updateStudentForm.value.age,
-      date: this.updateStudentForm.value.date,
-      isMale: this.updateStudentForm.value.isMale
+      
+    const updatedData= {
+      rollNo:this.rollNo,
+      name:this.updateStudentForm.value.name,
+      email:this.updateStudentForm.value.email,
+      age:this.updateStudentForm.value.age,
+      date:this.updateStudentForm.value.date,
+      isMale:this.updateStudentForm.value.isMale
     };
 
-    this.studentService.updateStudent(this.studentId, updatedData).subscribe(() => {
+    this.studentService.updateStudent(this.studentId,updatedData).subscribe(()=> {
       this.snackBar.open('Student updated successfully', 'close',{
-        duration: 3000,
-        verticalPosition: 'top', 
-        panelClass: ['success-snackbar']
+        duration:3000,
+        verticalPosition:'top', 
+        panelClass:['success-snackbar']
       });
     });
   }

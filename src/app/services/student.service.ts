@@ -7,7 +7,6 @@ import { Injectable } from '@angular/core';
 export class StudentService {
   url = 'http://gsmktg.azurewebsites.net/api/v1/techlabs/test/students';
   constructor(private http:HttpClient) { }
-  //url2 = 'http://gsmktg.azurewebsites.net/api/v1/techlabs/test/students';
   getStudents(){
     return this.http.get(this.url);
   }
@@ -18,8 +17,7 @@ export class StudentService {
   deleteStudent(id:any){
     return this.http.delete(this.url+"/"+id);
   }
-  updateStudent(id: string, updatedData: any) {
-    return this.http.put(`${this.url}/${id}`, updatedData);
+  updateStudent(id:string,updatedData:any) {
+    return this.http.put(`${this.url}/${id}`,updatedData);
   }
-  
 }

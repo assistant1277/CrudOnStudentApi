@@ -9,30 +9,30 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './add-student.component.html',
   styleUrls: ['./add-student.component.css']
 })
-export class AddStudentComponent {
+export class AddStudentComponent{
   newStudentForm = new FormGroup({
-    rollNo: new FormControl('', Validators.required),
-    name: new FormControl('', Validators.required),
-    age: new FormControl('', [Validators.required, Validators.min(1)]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    date: new FormControl('', Validators.required),
-    isMale: new FormControl(false)
+    rollNo:new FormControl('',Validators.required),
+    name:new FormControl('',Validators.required),
+    age:new FormControl('',[Validators.required,Validators.min(1)]),
+    email:new FormControl('',[Validators.required,Validators.email]),
+    date:new FormControl('',Validators.required),
+    isMale:new FormControl(false)
 });
 
 constructor(
-  private studentService: StudentService,
-  private router: Router,
-  private snackBar: MatSnackBar
+  private studentService:StudentService,
+  private router:Router,
+  private snackBar:MatSnackBar
 ) {}
 addNewStudent() {
   if (this.newStudentForm.invalid) {
     return;
   }
-  this.studentService.addStudent(this.newStudentForm.value).subscribe(() => {
+  this.studentService.addStudent(this.newStudentForm.value).subscribe(()=> {
     this.snackBar.open('Student added successfully', 'close', {
-      duration: 3000,
-      verticalPosition: 'top', 
-      panelClass: ['success-snackbar']
+      duration:3000,
+      verticalPosition:'top', 
+      panelClass:['success-snackbar']
     });
   });
 }

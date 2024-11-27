@@ -11,14 +11,14 @@ const routes: Routes = [
   //   pathMatch: 'full'
   // },
   {
-    path: 'students',
-    component: ShowStudentsComponent
+    path:'students',
+    component:ShowStudentsComponent
   },
   {
-    path: 'addStudent',
-    component: AddStudentComponent
+    path:'addStudent',
+    component:AddStudentComponent
   },
-  { path: 'updateStudent/:id', component: UpdateStudentComponent }
+  { path:'updateStudent/:id',component:UpdateStudentComponent }
 ];
 
 @NgModule({
