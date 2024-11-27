@@ -1,0 +1,52 @@
+<div class="form-container">
+<div class="form-card">
+  <h2>Update Student</h2>
+  <form [formGroup]="updateStudentForm" (ngSubmit)="updateStudent()">
+    <mat-form-field appearance="outline" class="full-width spaced-field">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" placeholder="Enter student name" />
+      <mat-error *ngIf="updateStudentForm.get('name')?.hasError('required')">
+        Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width spaced-field">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email" placeholder="Enter student email" />
+      <mat-error *ngIf="updateStudentForm.get('email')?.hasError('required')">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="updateStudentForm.get('email')?.hasError('email')">
+        Please enter valid email
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width spaced-field">
+      <mat-label>Age</mat-label>
+      <input matInput type="number" formControlName="age" placeholder="Enter student age" min="1" />
+      <mat-error *ngIf="updateStudentForm.get('age')?.hasError('required')">
+        Age is required
+      </mat-error>
+      <mat-error *ngIf="updateStudentForm.get('age')?.hasError('min')">
+        Age must be at least 1
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width spaced-field">
+      <mat-label>Date of birth</mat-label>
+      <input matInput type="date" formControlName="date" />
+      <mat-error *ngIf="updateStudentForm.get('date')?.hasError('required')">
+        Date is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-checkbox class="spaced-field" formControlName="isMale">Male</mat-checkbox>
+    <div class="form-buttons spaced-field">
+      <button mat-raised-button color="primary" type="submit" [disabled]="updateStudentForm.invalid" class="bordered-btn">
+        Update
+      </button>
+      <button mat-raised-button color="warn" type="button" (click)="goBack()" class="bordered-btn">Back to List</button>
+    </div>
+  </form>
+</div>
+</div>
