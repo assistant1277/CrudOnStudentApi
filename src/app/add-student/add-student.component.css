@@ -3,18 +3,17 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    background: linear-gradient(135deg,#e3f2fd,#bbdefb);
     padding: 20px;
 }
  
 .form-card {
-
     width: 100%;
     max-width: 600px;
     background: #ffffff;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -58,7 +57,7 @@ button {
     border: 2px solid currentColor; 
     border-radius: 8px; 
     padding: 8px 16px; 
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.3s ease,box-shadow 0.3s ease;
 }
   
 .bordered-btn:hover {
