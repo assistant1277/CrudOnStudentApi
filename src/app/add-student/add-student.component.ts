@@ -24,6 +24,7 @@ constructor(
   private router:Router,
   private snackBar:MatSnackBar
 ) {}
+
 addNewStudent() {
   if (this.newStudentForm.invalid) {
     return;
@@ -36,6 +37,7 @@ addNewStudent() {
     });
   });
 }
+
 goBack() {
   this.router.navigate(['/students']);
   }
