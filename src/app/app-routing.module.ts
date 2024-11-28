@@ -5,11 +5,6 @@ import { ShowStudentsComponent } from './show-students/show-students.component';
 import { UpdateStudentComponent } from './update-student/update-student.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: 'students',
-  //   pathMatch: 'full'
-  // },
   {
     path:'students',
     component:ShowStudentsComponent

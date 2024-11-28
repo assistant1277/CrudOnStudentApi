@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { StudentService } from './services/student.service';
-import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
