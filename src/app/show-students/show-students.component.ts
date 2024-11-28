@@ -30,7 +30,7 @@ export class ShowStudentsComponent {
 
   deleteStudent(id:any) {
     this.studentService.deleteStudent(id).subscribe(()=> {
-      this.loadStudents();// here we are doing reload after deletion
+      this.loadStudents();//here we are doing reload after deletion
     });
   }
 }

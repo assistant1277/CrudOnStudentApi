@@ -29,7 +29,7 @@ addNewStudent() {
     return;
   }
   this.studentService.addStudent(this.newStudentForm.value).subscribe(()=> {
-    this.snackBar.open('Student added successfully', 'close', {
+    this.snackBar.open('Student added successfully','close', {
       duration:3000,
       verticalPosition:'top', 
       panelClass:['success-snackbar']

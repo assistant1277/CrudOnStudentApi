@@ -63,7 +63,7 @@ export class UpdateStudentComponent {
     };
 
     this.studentService.updateStudent(this.studentId,updatedData).subscribe(()=> {
-      this.snackBar.open('Student updated successfully', 'close',{
+      this.snackBar.open('Student updated successfully','close',{
         duration:3000,
         verticalPosition:'top', 
         panelClass:['success-snackbar']
