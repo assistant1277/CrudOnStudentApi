@@ -9,14 +9,7 @@ import { StudentService } from '../services/student.service';
 export class ShowStudentsComponent {
   studentData:any=[];
   displayedColumns:string[]=[
-    'rollNo',
-    'name',
-    'age',
-    'email',
-    'date',
-    'isMale',
-    'actions',
-  ];
+    'rollNo','name','age','email','date','isMale','actions'];
 
   constructor(private studentService:StudentService) {
     this.loadStudents();

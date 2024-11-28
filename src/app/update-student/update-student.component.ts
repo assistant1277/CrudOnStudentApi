@@ -10,30 +10,30 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./update-student.component.css']
 })
 export class UpdateStudentComponent {
-  updateStudentForm = new FormGroup({
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    age: new FormControl('', [Validators.required, Validators.min(1)]),
-    date: new FormControl('', Validators.required),
+  updateStudentForm= new FormGroup({
+    name: new FormControl('',Validators.required),
+    email: new FormControl('',[Validators.required,Validators.email]),
+    age: new FormControl('',[Validators.required,Validators.min(1)]),
+    date: new FormControl('',Validators.required),
     isMale: new FormControl(false)
   });
 
-  studentId: string = '';
-  rollNo: number = 0;
+  studentId:string='';
+  rollNo:number=0;
 
   constructor(
-    private studentService: StudentService,
-    private route: ActivatedRoute,
-    private router: Router,
-    private snackBar: MatSnackBar
+    private studentService:StudentService,
+    private route:ActivatedRoute,
+    private router:Router,
+    private snackBar:MatSnackBar
   ) {
-    this.studentId = this.route.snapshot.paramMap.get('id')!;
+    this.studentId=this.route.snapshot.paramMap.get('id')!;
     this.loadStudentData(this.studentId);
   }
 
   loadStudentData(id:string) {
-    this.studentService.getStudents().subscribe((students: any) => {
-      const student=students.find((s:any)=> s.id === id);
+    this.studentService.getStudents().subscribe((students:any) => {
+      const student=students.find((s:any)=>s.id === id);
       if (student) {
         this.rollNo=student.rollNo;
 
