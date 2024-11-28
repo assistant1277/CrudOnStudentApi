@@ -48,7 +48,6 @@ button {
 }
 
 .delete-btn {
-    /* background-color: #e91e63;  */
     color: #ffffff;
     border: 1px solid blueviolet;
     transition: background-color 0.3s ease;
@@ -60,7 +59,6 @@ button {
 }
 
 .update-btn {
-    /* background-color: #f44336;  */
     color: #ffffff;
     border: 1px solid blueviolet;
     transition: background-color 0.3s ease;
