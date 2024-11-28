@@ -11,11 +11,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class UpdateStudentComponent {
   updateStudentForm= new FormGroup({
-    name: new FormControl('',Validators.required),
-    email: new FormControl('',[Validators.required,Validators.email]),
-    age: new FormControl('',[Validators.required,Validators.min(1)]),
-    date: new FormControl('',Validators.required),
-    isMale: new FormControl(false)
+    name:new FormControl('',Validators.required),
+    email:new FormControl('',[Validators.required,Validators.email]),
+    age:new FormControl('',[Validators.required,Validators.min(1)]),
+    date:new FormControl('',Validators.required),
+    isMale:new FormControl(false)
   });
 
   studentId:string='';
@@ -53,7 +53,7 @@ export class UpdateStudentComponent {
       return;
     }
       
-    const updatedData= {
+    const updatedData={
       rollNo:this.rollNo,
       name:this.updateStudentForm.value.name,
       email:this.updateStudentForm.value.email,

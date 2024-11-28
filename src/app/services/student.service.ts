@@ -14,9 +14,11 @@ export class StudentService {
   addStudent(newStudentData:any){
     return this.http.post(this.url,newStudentData);
   }
+
   deleteStudent(id:any){
     return this.http.delete(this.url+"/"+id);
   }
+  
   updateStudent(id:string,updatedData:any) {
     return this.http.put(`${this.url}/${id}`,updatedData);
   }

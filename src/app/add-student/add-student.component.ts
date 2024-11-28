@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./add-student.component.css']
 })
 export class AddStudentComponent{
-  newStudentForm = new FormGroup({
+  newStudentForm=new FormGroup({
     rollNo:new FormControl('',Validators.required),
     name:new FormControl('',Validators.required),
     age:new FormControl('',[Validators.required,Validators.min(1)]),
